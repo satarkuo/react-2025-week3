@@ -5,6 +5,9 @@ import Swal from 'sweetalert2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/style.scss'
 
+import logoHeader from './assets/img/LogoHeader.svg';
+import logoAdmin from './assets/img/admin/logoAdmin.svg'
+
 const baseURL = import.meta.env.VITE_BASE_URL;
 const basePath = import.meta.env.VITE_BASE_PATH;
 
@@ -105,7 +108,7 @@ function App() {
             <div className="container">
               <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" className="d-flex align-items-center mb-2 mb-lg-0 me-5 text-dark text-decoration-none">
-                  <img src="src/assets/img/logoHeader.svg" alt="logo"/>
+                  <img src={logoHeader} alt="logo"/>
                 </a>
                 <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                   <li><a href="#" className="nav-link px-2 link-secondary">產品列表</a></li>
@@ -207,7 +210,7 @@ function App() {
           <div className="row row-cols-2">
             <div className="col">
               <div className="AdminLogo">
-                <img src="src/assets/img/admin/logoAdmin.svg" alt="logo"/>
+                <img src={logoAdmin} alt="logo"/>
               </div>
             </div>
             <div className="col">
