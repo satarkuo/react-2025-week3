@@ -153,13 +153,12 @@
   }
 
 
-@mixin button-style {
+.btn {
     display: inline-block;
     border-radius: 100px;
     padding:8px 24px;
 }
 .btn-primary {
-    @include button-style;
     --bs-btn-color: var(--white);
     --bs-btn-bg: var(--primaryDefault);
     --bs-btn-border-color: var(--primaryDefault);
@@ -176,7 +175,6 @@
     --bs-btn-disabled-border-color: var(--gray2);
 }
 .btn-edit {
-  @include button-style;
   --bs-btn-color: var(--white);
   --bs-btn-bg: var(--adminDefault);
   --bs-btn-border-color: var(--adminDefault);
@@ -193,7 +191,6 @@
   --bs-btn-disabled-border-color: var(--gray2);
 }
 .btn-edit-outline {
-  @include button-style;
   --bs-btn-color: var(--adminDefault);
   --bs-btn-bg: var(--white);
   --bs-btn-border-color: var(--adminDefault);
@@ -210,7 +207,6 @@
   --bs-btn-disabled-border-color: var(--gray2);
 }
 .btn-success {
-  @include button-style;
   --bs-btn-color: var(--white);
   --bs-btn-bg: var(--adminSuccess);
   --bs-btn-border-color: var(--adminSuccess);
@@ -227,7 +223,6 @@
   --bs-btn-disabled-border-color: var(--gray2);
 }
 .btn-success-outline {
-  @include button-style;
   --bs-btn-color: var(--adminSuccess);
   --bs-btn-bg: var(--white);
   --bs-btn-border-color: var(--adminSuccess);
@@ -244,7 +239,6 @@
   --bs-btn-disabled-border-color: var(--gray2);
 }
 .btn-delete {
-  @include button-style;
   --bs-btn-color: var(--white);
   --bs-btn-bg: var(--adminDelete);
   --bs-btn-border-color: var(--adminDelete);
@@ -261,7 +255,6 @@
   --bs-btn-disabled-border-color: var(--gray2);
 }
 .btn-delete-outline {
-  @include button-style;
   --bs-btn-color: var(--adminDelete);
   --bs-btn-bg: var(--white);
   --bs-btn-border-color: var(--adminDelete);
@@ -316,4 +309,8 @@ header.header {
 }
 .object-fit {
     object-fit:cover;
+}
+.productTable tbody tr:hover td {
+  transition-duration: 0.3s;
+  background-color: var(--gray1);
 }
