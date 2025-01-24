@@ -1,0 +1,319 @@
+@font-face {
+    font-family: SweiGothicCJKtc-Regular;
+    src: url(https://cdn.jsdelivr.net/gh/max32002/swei-gothic@2.129/WebFont/CJK%20TC/SweiGothicCJKtc-Regular.woff2) format("woff2")
+    , url(https://cdn.jsdelivr.net/gh/max32002/swei-gothic@2.129/WebFont/CJK%20TC/SweiGothicCJKtc-Regular.woff) format("woff");
+  }
+
+:root {
+    --black: #000;
+    --white: #fff;
+    --gray0: #FAFAFA;
+    --gray1: #ECECEC;
+    --gray2: #B6B6B6;
+    --gray3: #7F7A7A;
+    --gray4: #212121;
+    --adminDefault:#44aaE9;
+    --adminDefaultDark:#258BC9;
+    --adminDelete:#E04C10;
+    --adminDeleteDark:#D2501B;
+    --adminSuccess:#47B966;
+    --adminSuccessDark:#25A247;
+    --primaryDefault: #E69270;
+    --primaryLight:#F4D4C9;
+    --primaryDark:#A44119;
+    --primaryPestel:#F7EEE9;
+    --secondaryDefault:#FCE37D;
+    --secondaryLight:#FBFA90;
+    --secondaryDark:#423A2F;
+    --accessoryRed:#A44119;
+    --accessoryBlue:#7682BD;
+    --accessoryWhite:#EDEDE6;
+
+  }
+  
+  html, body{height: 100%;}
+  body { 
+    width: 100%;
+    position: relative;
+    background: var(--white);
+    font-size: 1em;
+    color:var(--secondaryDark);
+    padding:0;
+    margin:0;
+    font-family: 'SweiGothicCJKtc-Regular', Arial, Helvetica, sans-serif;
+    word-break: break-all;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: var(--gray1);
+  }
+  ::-webkit-scrollbar-track-piece {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: var(--white);
+  }
+  ul,li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a, a:hover {
+    display: inline-block;
+    color: var(--gray1);
+    transition-duration: 0.3s;
+    text-decoration: none;
+    outline: none;
+  }
+    a:hover { color: #c0bcbc;}
+  
+  .h1 {
+    font-weight: bold;
+    font-size: 2.25rem;
+    line-height: 140%;
+    letter-spacing: 1px;
+  }
+  .h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 140%;
+    letter-spacing: 1px;
+  }
+  .h3 {
+    font-weight: bold;
+    font-size: 1.75rem;
+    line-height: 140%;
+    letter-spacing: 1px;
+  }
+  .h4 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 140%;
+    letter-spacing: 1px;
+  }
+  .h5 {
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 140%;
+    letter-spacing: 1px;
+  }
+  .h6 {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 140%;
+    letter-spacing: 1px;
+  }
+  p.p {
+    font-size: 0.93rem;
+    line-height: 160%;
+    letter-spacing: 1px;
+    color: var(--gray3);
+    word-break: break-all;
+  }
+  
+  ::placeholder { color: var(--gray2); }
+  ::-webkit-input-placeholder { color: var(--gray2); }
+  ::-moz-placeholder { color: var(--gray2); opacity: 1; }
+  
+  
+  input.input {
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px 24px;
+    border: 1px solid var(--gray2);
+    background: var(--gray0);
+    letter-spacing: 0.15px;
+    outline: none;
+    color: var(--secondaryDark);
+  }
+  
+  textarea.textarea {
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 12px;
+    border: 0;
+    border: 1px solid var(--gray2);
+    background: var(--gray0);
+    line-height: 21px; /* 140% */
+    letter-spacing: 0.15px;
+    outline: none;
+    color: var(--secondaryDark);
+  }
+
+
+@mixin button-style {
+    display: inline-block;
+    border-radius: 100px;
+    padding:8px 24px;
+}
+.btn-primary {
+    @include button-style;
+    --bs-btn-color: var(--white);
+    --bs-btn-bg: var(--primaryDefault);
+    --bs-btn-border-color: var(--primaryDefault);
+    --bs-btn-hover-color: var(--white);
+    --bs-btn-hover-bg: var(--primaryDark);
+    --bs-btn-hover-border-color: var(--primaryDark);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: var(--white);
+    --bs-btn-active-bg: var(--primaryDark);
+    --bs-btn-active-border-color: var(--primaryDark);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--white);
+    --bs-btn-disabled-bg:var(--gray2);
+    --bs-btn-disabled-border-color: var(--gray2);
+}
+.btn-edit {
+  @include button-style;
+  --bs-btn-color: var(--white);
+  --bs-btn-bg: var(--adminDefault);
+  --bs-btn-border-color: var(--adminDefault);
+  --bs-btn-hover-color: var(--white);
+  --bs-btn-hover-bg: var(--adminDefaultDark);
+  --bs-btn-hover-border-color: var(--adminDefaultDark);
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: var(--white);
+  --bs-btn-active-bg: var(--adminDefaultDark);
+  --bs-btn-active-border-color: var(--adminDefaultDark);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--white);
+  --bs-btn-disabled-bg:var(--gray2);
+  --bs-btn-disabled-border-color: var(--gray2);
+}
+.btn-edit-outline {
+  @include button-style;
+  --bs-btn-color: var(--adminDefault);
+  --bs-btn-bg: var(--white);
+  --bs-btn-border-color: var(--adminDefault);
+  --bs-btn-hover-color: var(--white);
+  --bs-btn-hover-bg: var(--adminDefault);
+  --bs-btn-hover-border-color: var(--adminDefault);
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: var(--white);
+  --bs-btn-active-bg: var(--adminDefault);
+  --bs-btn-active-border-color: var(--adminDefault);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--white);
+  --bs-btn-disabled-bg:var(--gray2);
+  --bs-btn-disabled-border-color: var(--gray2);
+}
+.btn-success {
+  @include button-style;
+  --bs-btn-color: var(--white);
+  --bs-btn-bg: var(--adminSuccess);
+  --bs-btn-border-color: var(--adminSuccess);
+  --bs-btn-hover-color: var(--white);
+  --bs-btn-hover-bg: var(--adminSuccessDark);
+  --bs-btn-hover-border-color: var(--adminSuccessDark);
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: var(--white);
+  --bs-btn-active-bg: var(--adminSuccessDark);
+  --bs-btn-active-border-color: var(--adminSuccessDark);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--white);
+  --bs-btn-disabled-bg:var(--gray2);
+  --bs-btn-disabled-border-color: var(--gray2);
+}
+.btn-success-outline {
+  @include button-style;
+  --bs-btn-color: var(--adminSuccess);
+  --bs-btn-bg: var(--white);
+  --bs-btn-border-color: var(--adminSuccess);
+  --bs-btn-hover-color: var(--white);
+  --bs-btn-hover-bg: var(--adminSuccessDark);
+  --bs-btn-hover-border-color: var(--adminSuccessDark);
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: var(--white);
+  --bs-btn-active-bg: var(--adminSuccessDark);
+  --bs-btn-active-border-color: var(--adminSuccessDark);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--white);
+  --bs-btn-disabled-bg:var(--gray2);
+  --bs-btn-disabled-border-color: var(--gray2);
+}
+.btn-delete {
+  @include button-style;
+  --bs-btn-color: var(--white);
+  --bs-btn-bg: var(--adminDelete);
+  --bs-btn-border-color: var(--adminDelete);
+  --bs-btn-hover-color: var(--white);
+  --bs-btn-hover-bg: var(--adminDeleteDark);
+  --bs-btn-hover-border-color: var(--adminDeleteDark);
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: var(--white);
+  --bs-btn-active-bg: var(--adminDeleteDark);
+  --bs-btn-active-border-color: var(--adminDeleteDark);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--white);
+  --bs-btn-disabled-bg:var(--gray2);
+  --bs-btn-disabled-border-color: var(--gray2);
+}
+.btn-delete-outline {
+  @include button-style;
+  --bs-btn-color: var(--adminDelete);
+  --bs-btn-bg: var(--white);
+  --bs-btn-border-color: var(--adminDelete);
+  --bs-btn-hover-color: var(--white);
+  --bs-btn-hover-bg: var(--adminDeleteDark);
+  --bs-btn-hover-border-color: var(--adminDeleteDark);
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: var(--white);
+  --bs-btn-active-bg: var(--adminDeleteDark);
+  --bs-btn-active-border-color: var(--adminDeleteDark);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--white);
+  --bs-btn-disabled-bg:var(--gray2);
+  --bs-btn-disabled-border-color: var(--gray2);
+}
+
+header.header {
+    background-color: var(--primaryPestel);
+}
+.contentAll {
+    background-image: url(img/Wave-top.svg);
+    background-position: top left;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/*---------ADMIN LOGIN---------------*/
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img/admin/loginCover.png) ;
+    background-size: cover;
+    background-position: center right;
+    height:100vh;
+}
+    .loginForm {
+        width: 250px;
+    }
+.AdminLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+.images {
+    height:150px;
+    width:150px;
+    border-radius: 8px;
+}
+.object-fit {
+    object-fit:cover;
+}
