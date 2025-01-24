@@ -75,6 +75,7 @@ function App() {
     
   }, [])
 
+  //開啟modal：新增、編輯產品
   const openModal = (mode, product) => {
     setModalMode(mode)
     switch (mode) {
@@ -99,6 +100,7 @@ function App() {
     }, 150)
 
   }
+  //關閉modal：新增、編輯產品
   const closeModal = () => {
     const modalInstance = Modal.getInstance(productModalRef.current) //取得modal
     modalInstance.hide();
@@ -109,6 +111,7 @@ function App() {
       triggerButton.focus(); // 將焦點移到觸發按鈕
     }
   }
+  //開啟modal：刪除產品
   const openDeleteProductModal = (product) => {
     setTempModalData(product);
     const modalInstance = Modal.getInstance(deleteProductModalRef.current) //取得modal
@@ -122,6 +125,7 @@ function App() {
       }
     }, 150)
   }
+  //關閉modal：刪除產品
   const closeDeleteProductModal = () => {
     const modalInstance = Modal.getInstance(deleteProductModalRef.current) //取得modal
     modalInstance.hide();
@@ -132,6 +136,7 @@ function App() {
       triggerButton.focus(); // 將焦點移到觸發按鈕
     }
   }
+  //modal input
   const handleModalInputChange = (e) => {
     const { name, value, checked, type } = e.target;
     setTempModalData( prevData => ({
@@ -140,7 +145,7 @@ function App() {
       [name]: type === "checkbox" ? checked : value 
     }))
   }
-
+  //modal image
   const handleImageChange = (e, index) => {
     const { value } = e.target;
     setTempModalData( prevData => {
@@ -149,14 +154,14 @@ function App() {
       return { ...prevData, imagesUrl:newImages }
     })
   }
-
+  //modal add image
   const addImage = () => {
     setTempModalData( prevData => {
       const newImages = [...prevData.imagesUrl, ''];
       return { ...prevData, imagesUrl:newImages }
     })
   }
-
+  //modal remove image
   const removeImage = () => {
     setTempModalData( prevData => {
       const newImages = [...prevData.imagesUrl];
@@ -169,8 +174,7 @@ function App() {
   const [accountData, setAccountData] = useState({username: '' , password: ''}) //暫存登入資訊
   const [isAuth, setIsAuth] = useState(false) //已登入未登入模板切換 (尚未教到路由、登出尚未串)
   
-  //驗證登入狀態
-
+  //驗證登入狀態:儲存token
   useEffect(() => {
     const token = document.cookie.replace(/(?:^|;\s*)apiToken\s*=\s*([^;]*).*$|^.*$/,"$1"); 
     if (token) {
@@ -180,7 +184,7 @@ function App() {
       setIsAuth(false);
     }
   }, []);
-
+  //驗證登入狀態
   const checkLogin = async () => {
     try {
       await axios.post(`${baseURL}/api/user/check`)
